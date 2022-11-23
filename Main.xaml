@@ -131,7 +131,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,252 300,278</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Loads settings from configuration file and open applications." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="600,1887" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence sap2010:Annotation.AnnotationText="Loads settings from configuration file and open applications." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="200,147" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -328,7 +328,7 @@
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try running Walutomat" sap:VirtualizedContainerService.HintSize="438,857" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch DisplayName="Try running Walutomat" sap:VirtualizedContainerService.HintSize="480,888" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,18 +346,10 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Getting exchange ratio from Walutomat&quot;]" />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Walutomat.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Processes\Walutomat.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Amount">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Amount" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Currency">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Currency" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Price">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_Price" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_obj_Browser">
-                            <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Amount">[str_Amount]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Currency">[str_Currency]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Price">[str_Price]</OutArgument>
+                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_obj_Browser">[obj_Browser]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -369,10 +361,10 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="446,716" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -380,7 +372,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <TryCatch DisplayName="Try CloseApps" sap:VirtualizedContainerService.HintSize="438,784" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                        <TryCatch DisplayName="Try CloseApps" sap:VirtualizedContainerService.HintSize="440,647" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -403,16 +395,18 @@
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenApps.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Processes\OpenApps.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_browser">[obj_browser]</OutArgument>
+                                  <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_Browser">
+                                    <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
+                                  </OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="406,475" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -420,10 +414,10 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Kill Apps" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence DisplayName="Kill Apps" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -434,7 +428,9 @@
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenApps.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Processes\OpenApps.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_browser">[obj_browser]</OutArgument>
+                                      <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_Browser">
+                                        <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
+                                      </OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
@@ -446,10 +442,10 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <TryCatch DisplayName="Try running DobryKantor" sap:VirtualizedContainerService.HintSize="438,61" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                <TryCatch DisplayName="Try running DobryKantor" sap:VirtualizedContainerService.HintSize="480,888" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -464,18 +460,10 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Getting exchange ratio from Dobry Kantor&quot;]" />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DobryKantor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Processes\DobryKantor.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Price">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_Price" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Currency">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Currency" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Amount">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Amount" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_obj_Browser">
-                            <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
-                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Price">[str_Price]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Currency">[str_Currency]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_Amount">[str_Amount]</InArgument>
+                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_obj_Browser">[obj_Browser]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -487,10 +475,10 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="446,716" sap2010:WorkflowViewState.IdRef="Catch`1_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -498,7 +486,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <TryCatch DisplayName="Try CloseApps" sap:VirtualizedContainerService.HintSize="438,784" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                        <TryCatch DisplayName="Try CloseApps" sap:VirtualizedContainerService.HintSize="440,647" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -521,16 +509,18 @@
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenApps.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Processes\OpenApps.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_browser">[obj_browser]</OutArgument>
+                                  <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_Browser">
+                                    <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
+                                  </OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="406,475" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -538,10 +528,10 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Kill Apps" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                <Sequence DisplayName="Kill Apps" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -552,7 +542,9 @@
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenApps.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Processes\OpenApps.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_browser">[obj_browser]</OutArgument>
+                                      <OutArgument x:TypeArguments="ui:Browser" x:Key="out_obj_Browser">
+                                        <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="obj_Browser" />
+                                      </OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
